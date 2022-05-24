@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div style="padding:50px  100px;">
+    <h3> Добавить пост </h3> <br>
+<form action="{% url 'adminForm'%}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    {{ form.media }}
+    
+    <button class="btn btn-success" type="submit"> Добавить </button>
+
+
+</form>
+</div>
+{% endblock content %}

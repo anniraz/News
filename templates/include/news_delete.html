@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div style="padding:50px  100px;">
+    <h3>Удаление статьи </h3> <br>
+<form  method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <button  type="submit" class="btn btn-success"> Удалить </button>
+
+
+</form>
+</div>
+{% endblock content %}

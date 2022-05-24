@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container-fluid py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                    <h2>{{news_all.title}}</h2>
+                    <img src="{{news_all.image.url}}" style="width: 400px;" alt="">
+                    {% for tag in n.tags.all %}
+                    <h6>{{tag}}</h6>
+                    {% endfor %}
+                    <p>{{news_all.description|safe|linebreaks}}</p>
+                    <button style="background-color: rgb(255, 43, 19); border-radius: 10px;"> <a style="color: white ;" href="{% url 'news_delete' news_all.pk %}"> DELETE</a></button>
+                    <button style="background-color: rgb(255, 43, 19); border-radius: 10px;">  <a style="color: white ;" href="{% url 'news_update' news_all.pk %}">UPDATE</a></button>
+
+             </div>
+            {% include 'include/sidebar_category_page.html' %}
+            
+        </div>
+    </div>
+</div>
+  
+
+{% endblock content %}
